@@ -12,5 +12,8 @@ class Dictionary
     @words << new_word
   end
 
+  def keywords
+  @words.keys
+  end
 
 end
