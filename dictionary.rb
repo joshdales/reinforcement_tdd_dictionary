@@ -17,15 +17,15 @@ class Dictionary
   end
 
   def keywords
-    @words.keys
+    @words.map {|word, definition| word}.sort
   end
 
   def include?(word)
     @words.has_key?(word)
   end
 
-  def find(word)
-    @words.select{ |k, v| k.include?(word)}
+  def find(wanted_word)
+    @words.select{ |word, definition| word.include?(wanted_word)}
   end
 
 end
