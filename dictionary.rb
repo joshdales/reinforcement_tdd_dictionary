@@ -17,6 +17,11 @@ class Dictionary
   end
 
   def include?(word)
+    @words.has_key?(word)
+  end
+
+  def find(word)
     @words[word]
   end
+
 end
