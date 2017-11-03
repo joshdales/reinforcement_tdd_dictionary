@@ -8,8 +8,12 @@ class Dictionary
     @words
   end
 
-  def add(new_word, definition = nil)
-    @words[new_word] = definition
+  def add(new_word)
+    if new_word.class == Hash
+      new_word.each { |word, definition| @words[word] = definition}
+    else
+      @words[new_word] = nil
+    end
   end
 
   def keywords
@@ -21,7 +25,7 @@ class Dictionary
   end
 
   def find(word)
-    @words[word]
+    @words.select{ |k, v| k.include?(word)}
   end
 
 end
