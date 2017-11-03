@@ -1,19 +1,18 @@
 class Dictionary
 
   def initialize
-    @words = []
+    @words = {}
   end
 
   def entries
     @words
   end
 
-  def add(new_word)
-    @words << new_word
+  def add(new_word, definition = nil)
+    @words[new_word] = definition
   end
 
   def keywords
-  @words.keys
+    @words.keys
   end
-
 end
