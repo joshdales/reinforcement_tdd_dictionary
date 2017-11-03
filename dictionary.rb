@@ -15,4 +15,8 @@ class Dictionary
   def keywords
     @words.keys
   end
+
+  def include?(word)
+    @words[word]
+  end
 end
